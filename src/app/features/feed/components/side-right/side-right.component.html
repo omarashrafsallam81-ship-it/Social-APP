@@ -1,0 +1,298 @@
+<!-- =====================================================
+     RIGHT SIDEBAR
+====================================================== -->
+
+<aside class="hidden xl:block w-[330px] py-6 shrink-0 space-y-6">
+
+    <!-- =====================================================
+       PROFILE CARD
+  ====================================================== -->
+
+    <div class="bg-white dark:bg-[#111115]
+           border border-zinc-200 dark:border-white/5
+           rounded-3xl overflow-hidden
+           shadow-lg dark:shadow-xl
+           transition-colors">
+
+        <!-- COVER -->
+
+        <div class="h-24
+             bg-gradient-to-r
+             from-violet-600
+             via-indigo-600
+             to-pink-500
+             relative
+             overflow-hidden">
+
+            @if (profileData?.cover) {
+
+            <img [src]="profileData!.cover" [alt]="profileData?.name || 'Cover'" class="w-full h-full object-cover">
+
+            }
+
+        </div>
+
+
+        <div class="px-5 pb-5 pt-0 relative">
+
+            <!-- =====================================================
+           AVATAR + VIEW PROFILE
+      ====================================================== -->
+
+            <div class="flex justify-between
+               items-end
+               -mt-10
+               mb-3">
+
+                <!-- Avatar -->
+
+                <img [src]="profilePhoto" [alt]="profileData?.name || 'Avatar'" class="w-20 h-20
+                 rounded-full
+                 object-cover
+                 border-4
+                 border-white dark:border-[#111115]
+                 shadow-md">
+
+
+                <!-- View Profile -->
+
+                <a routerLink="/profile" class="px-4 py-1.5
+                 rounded-xl
+                 border border-zinc-200 dark:border-white/10
+                 text-xs font-bold
+                 text-zinc-800 dark:text-white
+                 hover:bg-zinc-900 hover:text-white
+                 dark:hover:bg-white dark:hover:text-black
+                 transition">
+                    View Profile
+                </a>
+
+            </div>
+
+
+            <!-- =====================================================
+           NAME
+      ====================================================== -->
+
+            <h2 class="font-bold text-lg
+               text-zinc-900 dark:text-white">
+                {{ profileData?.name || 'Loading...' }}
+            </h2>
+
+
+            <!-- =====================================================
+           USERNAME
+      ====================================================== -->
+
+            <p class="text-xs
+               text-zinc-500
+               dark:text-zinc-500
+               mb-3">
+
+                @if (profileData?.username) {
+
+                &#64;{{ profileData?.username }}
+
+                } @else {
+
+                &#64;username
+
+                }
+
+            </p>
+
+
+            <!-- =====================================================
+           EMAIL
+      ====================================================== -->
+
+            <p class="text-xs
+               text-zinc-600 dark:text-zinc-300
+               leading-relaxed
+               mb-4
+               break-all">
+                {{ profileData?.email || 'No email available' }}
+            </p>
+
+
+            <!-- =====================================================
+           STATS
+      ====================================================== -->
+
+            <div class="grid grid-cols-3 gap-2
+               py-3 px-2
+               rounded-2xl
+               bg-zinc-100 dark:bg-white/5
+               border border-zinc-200 dark:border-white/5
+               text-center">
+
+                <!-- Followers -->
+
+                <div>
+
+                    <span class="block text-sm font-black
+                   text-zinc-900 dark:text-white">
+                        {{ profileData?.followersCount ?? 0 }}
+                    </span>
+
+                    <span class="text-[10px]
+                   text-zinc-500
+                   dark:text-zinc-500
+                   font-medium
+                   uppercase">
+                        Followers
+                    </span>
+
+                </div>
+
+
+                <!-- Following -->
+
+                <div class="border-x
+                 border-zinc-200 dark:border-white/5">
+
+                    <span class="block text-sm font-black
+                   text-zinc-900 dark:text-white">
+                        {{ profileData?.followingCount ?? 0 }}
+                    </span>
+
+                    <span class="text-[10px]
+                   text-zinc-500
+                   dark:text-zinc-500
+                   font-medium
+                   uppercase">
+                        Following
+                    </span>
+
+                </div>
+
+
+                <!-- Bookmarks -->
+
+                <div>
+
+                    <span class="block text-sm font-black
+                   text-violet-600
+                   dark:text-violet-400">
+                        {{ profileData?.bookmarksCount ?? 0 }}
+                    </span>
+
+                    <span class="text-[10px]
+                   text-zinc-500
+                   dark:text-zinc-500
+                   font-medium
+                   uppercase">
+                        Bookmarks
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+       SUGGESTIONS
+  ====================================================== -->
+
+    <div class="bg-white dark:bg-[#111115]
+           border border-zinc-200 dark:border-white/5
+           rounded-3xl p-5
+           shadow-lg dark:shadow-xl
+           transition-colors">
+
+        <h3 class="font-bold text-sm
+             text-zinc-900 dark:text-white
+             mb-4">
+            Who to follow
+        </h3>
+
+
+        <div class="space-y-4">
+
+            <!-- =====================================================
+           DYNAMIC USERS
+      ====================================================== -->
+
+            @for (user of suggestions; track user._id) {
+
+            <div class="flex items-center
+                 justify-between
+                 gap-3">
+
+                <!-- User Info -->
+
+                <div class="flex items-center
+                   gap-3
+                   min-w-0">
+
+                    <!-- User Avatar -->
+
+                    <img [src]="user.photo || '/iamges/logo-3.jpeg'" [alt]="user.name" class="w-9 h-9
+                     rounded-full
+                     object-cover
+                     shrink-0">
+
+
+                    <div class="min-w-0">
+
+                        <!-- Name -->
+
+                        <h4 class="text-sm font-bold
+                       text-zinc-900 dark:text-white
+                       hover:underline
+                       cursor-pointer
+                       truncate">
+                            {{ user.name }}
+                        </h4>
+
+
+                        <!-- Username -->
+
+                        <p class="text-xs
+                       text-zinc-500
+                       truncate">
+                            &#64;{{ user.username }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Follow -->
+
+                <button type="button" class="text-xs font-bold
+                   bg-zinc-900 dark:bg-white
+                   text-white dark:text-black
+                   px-3.5 py-1.5
+                   rounded-xl
+                   hover:bg-violet-600
+                   dark:hover:bg-violet-400
+                   hover:text-white
+                   transition
+                   shrink-0">
+                    Follow
+                </button>
+
+            </div>
+
+            } @empty {
+
+            <p class="text-xs
+                 text-zinc-500
+                 text-center
+                 py-4">
+                No suggestions available
+            </p>
+
+            }
+
+        </div>
+
+    </div>
+
+</aside>

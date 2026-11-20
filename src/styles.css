@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+@import 'ngx-toastr/toastr';
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@utility container {
+    margin-inline: auto;
+}
+
+@theme {
+    --color-mainColor: ;
+    --color-Second: ;
+
+}
+
+body {
+
+    background-color: var();
+    font-family: "Exo", sans-serif;
+}

@@ -1,0 +1,1082 @@
+<div class="min-h-screen flex items-center justify-center
+    bg-[#f5f5f7] text-zinc-900
+    dark:bg-[#070709] dark:text-zinc-100
+    p-3 sm:p-5 font-sans transition-colors duration-300">
+
+    <!-- Main Container -->
+    <div class="relative w-full max-w-7xl mx-auto overflow-hidden
+        rounded-[2.5rem]
+        border border-zinc-200/80
+        bg-[#fafafa]
+        dark:border-white/5
+        dark:bg-[#0d0d10]
+        shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+        dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+        grid grid-cols-1 lg:grid-cols-2
+        gap-6 lg:gap-8
+        p-4 md:p-6 lg:p-8
+        transition-colors duration-300">
+
+        <!-- Soft Background Glow -->
+        <div class="absolute -top-32 -left-32
+            w-72 h-72
+            bg-violet-500/5
+            dark:bg-violet-600/10
+            rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="absolute -bottom-32 -right-32
+            w-72 h-72
+            bg-pink-500/5
+            dark:bg-pink-500/10
+            rounded-full blur-3xl pointer-events-none">
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- LEFT SIDE -->
+        <!-- ============================================= -->
+
+        <div class="hidden lg:flex flex-col justify-center
+            py-2 pr-3 relative z-10">
+
+            <!-- Logo -->
+            <header class="mb-8">
+
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11
+                        bg-gradient-to-tr
+                        from-violet-600 via-indigo-500 to-pink-500
+                        rounded-2xl
+                        flex items-center justify-center
+                        shadow-md shadow-indigo-500/10
+                        group-hover:scale-105
+                        transition-all duration-300">
+
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+                        </svg>
+
+                    </div>
+
+                    <span class="font-bold text-2xl
+                        tracking-tight
+                        text-zinc-900
+                        dark:text-white">
+
+                        Nexus
+
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- Welcome Text -->
+            <h1 class="text-4xl xl:text-5xl
+                font-extrabold
+                tracking-tight
+                text-center
+                leading-tight
+                mb-5
+                text-zinc-900
+                dark:text-zinc-100">
+
+                Join the
+                <br />
+
+                <span class="bg-gradient-to-r
+                    from-violet-500 via-indigo-500 to-pink-500
+                    dark:from-violet-400 dark:via-indigo-400 dark:to-pink-400
+                    bg-clip-text text-transparent">
+
+                    Nexus Community
+
+                </span>
+
+            </h1>
+
+
+            <!-- 3D Illustration -->
+            <img src="/iamges/logo-2.png" alt="Nexus 3D illustration" class="w-auto
+                h-[170px] xl:h-[205px]
+                object-contain
+                mx-auto my-3
+                drop-shadow-[0_10px_25px_rgba(124,58,237,0.10)]
+                dark:drop-shadow-[0_10px_25px_rgba(124,58,237,0.20)]">
+
+
+            <!-- Description -->
+            <p class="text-zinc-500
+                text-sm text-center
+                leading-relaxed
+                max-w-md mx-auto">
+
+                Create your account and connect with people,
+                ideas, and opportunities that matter.
+
+            </p>
+
+
+            <!-- Small Accent -->
+            <div class="flex items-center
+                justify-center gap-2 mt-6">
+
+                <span class="w-8 h-1
+                    rounded-full
+                    bg-violet-600">
+                </span>
+
+                <span class="w-2 h-1
+                    rounded-full
+                    bg-indigo-500">
+                </span>
+
+                <span class="w-2 h-1
+                    rounded-full
+                    bg-pink-500">
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ============================================= -->
+        <!-- RIGHT SIDE -->
+        <!-- ============================================= -->
+
+        <div class="flex flex-col justify-center
+            w-full max-w-lg mx-auto
+            lg:max-w-none
+            py-2 lg:py-1
+            lg:pl-3
+            relative z-10">
+
+            <!-- Register Card -->
+            <div class="bg-white
+                dark:bg-[#111115]
+                border border-zinc-200/80
+                dark:border-white/5
+                w-full max-w-lg
+                rounded-3xl
+                shadow-[0_4px_20px_rgba(0,0,0,0.025)]
+                dark:shadow-[0_4px_20px_rgba(0,0,0,0.18)]
+                p-6 lg:p-8 mx-auto
+                transition-colors duration-300">
+
+
+                <!-- Heading -->
+                <div class="mb-6">
+
+                    <div class="inline-flex items-center
+                        gap-2 mb-3">
+
+                        <span class="w-2 h-2
+                            rounded-full
+                            bg-violet-500">
+                        </span>
+
+                        <span class="text-xs
+                            font-semibold
+                            text-violet-500
+                            dark:text-violet-400
+                            uppercase
+                            tracking-wider">
+
+                            Create Account
+
+                        </span>
+
+                    </div>
+
+
+                    <h2 class="text-2xl
+                        lg:text-[26px]
+                        font-extrabold
+                        text-zinc-900
+                        dark:text-white
+                        mb-1">
+
+                        Create a new account
+
+                    </h2>
+
+
+                    <p class="text-zinc-500 text-sm">
+
+                        It is quick and easy.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Form -->
+                <form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="space-y-4">
+
+
+                    <!-- ============================================= -->
+                    <!-- Full Name -->
+                    <!-- ============================================= -->
+
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2
+                                z-10">
+
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                        clip-rule="evenodd">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <input formControlName="name" type="text" id="fullname_floating_outlined" placeholder=" "
+                                [class.!border-rose-500]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                                class="block px-4 pl-12
+                                pb-2.5 pt-4
+                                w-full text-sm
+                                text-zinc-900
+                                dark:text-zinc-100
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                rounded-xl
+                                border border-zinc-200
+                                dark:border-white/5
+                                appearance-none
+                                focus:outline-none
+                                focus:ring-0
+                                focus:!border-violet-500
+                                peer
+                                placeholder-transparent
+                                transition-all duration-200
+                                hover:border-zinc-300
+                                dark:hover:border-white/10" />
+
+
+                            <label for="fullname_floating_outlined" class="absolute text-xs
+                                text-zinc-500
+                                duration-300
+                                transform
+                                -translate-y-4
+                                scale-75
+                                top-2 z-10
+                                origin-[0]
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                px-2
+                                peer-focus:px-2
+                                peer-focus:text-violet-400
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:-translate-y-1/2
+                                peer-placeholder-shown:top-1/2
+                                peer-focus:top-2
+                                peer-focus:scale-75
+                                peer-focus:-translate-y-4
+                                start-10
+                                cursor-text rounded">
+
+                                Full Name
+
+                            </label>
+
+                        </div>
+
+
+                        @if (registerForm.get('name')?.touched &&
+                        registerForm.get('name')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs
+                            text-rose-400
+                            flex items-center gap-1">
+
+                            <p>Full Name is required.</p>
+
+                        </div>
+
+                        }
+
+
+                        @if (registerForm.get('name')?.touched &&
+                        registerForm.get('name')?.hasError('minlength')) {
+
+                        <div class="mt-1.5 text-xs
+                            text-rose-400
+                            flex items-center gap-1">
+
+                            <p>Name must be at least 3 characters</p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Username -->
+                    <!-- ============================================= -->
+
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2
+                                z-10">
+
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9 m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <input formControlName="username" type="text" id="username_floating_outlined"
+                                placeholder=" " class="block px-4 pl-12
+                                pb-2.5 pt-4
+                                w-full text-sm
+                                text-zinc-900
+                                dark:text-zinc-100
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                rounded-xl
+                                border border-zinc-200
+                                dark:border-white/5
+                                appearance-none
+                                focus:outline-none
+                                focus:ring-0
+                                focus:!border-violet-500
+                                peer
+                                placeholder-transparent
+                                transition-all duration-200
+                                hover:border-zinc-300
+                                dark:hover:border-white/10" />
+
+
+                            <label for="username_floating_outlined" class="absolute text-xs
+                                text-zinc-500
+                                duration-300
+                                transform
+                                -translate-y-4
+                                scale-75
+                                top-2 z-10
+                                origin-[0]
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                px-2
+                                peer-focus:px-2
+                                peer-focus:text-violet-400
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:-translate-y-1/2
+                                peer-placeholder-shown:top-1/2
+                                peer-focus:top-2
+                                peer-focus:scale-75
+                                peer-focus:-translate-y-4
+                                start-10
+                                cursor-text rounded">
+
+                                Username (optional)
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Email -->
+                    <!-- ============================================= -->
+
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2
+                                z-10">
+
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9 m4.5-1.206a8.959 8.959 0 01-4.5 1.207">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <input formControlName="email" type="email" id="email_floating_outlined" placeholder=" "
+                                [class.!border-rose-500]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                                class="block px-4 pl-12
+                                pb-2.5 pt-4
+                                w-full text-sm
+                                text-zinc-900
+                                dark:text-zinc-100
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                rounded-xl
+                                border border-zinc-200
+                                dark:border-white/5
+                                appearance-none
+                                focus:outline-none
+                                focus:ring-0
+                                focus:!border-violet-500
+                                peer
+                                placeholder-transparent
+                                transition-all duration-200
+                                hover:border-zinc-300
+                                dark:hover:border-white/10" />
+
+
+                            <label for="email_floating_outlined" class="absolute text-xs
+                                text-zinc-500
+                                duration-300
+                                transform
+                                -translate-y-4
+                                scale-75
+                                top-2 z-10
+                                origin-[0]
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                px-2
+                                peer-focus:px-2
+                                peer-focus:text-violet-400
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:-translate-y-1/2
+                                peer-placeholder-shown:top-1/2
+                                peer-focus:top-2
+                                peer-focus:scale-75
+                                peer-focus:-translate-y-4
+                                start-10
+                                cursor-text rounded">
+
+                                Email address
+
+                            </label>
+
+                        </div>
+
+
+                        @if (registerForm.get('email')?.touched &&
+                        registerForm.get('email')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Email is required.</p>
+
+                        </div>
+
+                        }
+
+
+                        @if (registerForm.get('email')?.touched &&
+                        registerForm.get('email')?.hasError('email')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Please enter a valid email address.</p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Gender -->
+                    <!-- ============================================= -->
+
+                    <div class="relative flex flex-col">
+
+                        <div class="relative">
+
+                            <span class="absolute left-0 top-1/2
+                                -translate-y-1/2 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none z-10">
+
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0z
+                                        M18 8a2 2 0 11-4 0 2 2 0 014 0z
+                                        M14 15a4 4 0 00-8 0v3h8v-3z
+                                        M6 8a2 2 0 11-4 0 2 2 0 014 0z
+                                        M16 18v-3a5.972 5.972 0 00-.75-2.906
+                                        A3.005 3.005 0 0119 15v3h-3z
+                                        M4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3.005 3.005 0 013.75-2.906z">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <select formControlName="gender"
+                                [class.!border-rose-500]="registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched"
+                                style="appearance: none !important; -webkit-appearance: none !important; -moz-appearance: none !important; background-image: none !important;"
+                                class="w-full
+                                pl-12 pr-10
+                                py-3.5
+                                border border-zinc-200
+                                dark:border-white/5
+                                rounded-xl
+                                focus:ring-0
+                                focus:!border-violet-500
+                                transition-all duration-200
+                                text-sm
+                                text-zinc-500
+                                dark:text-zinc-400
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                cursor-pointer
+                                relative z-0
+                                hover:border-zinc-300
+                                dark:hover:border-white/10">
+
+                                <option value="" disabled class="bg-white dark:bg-[#111115]
+                                    text-zinc-500">
+
+                                    Select gender
+
+                                </option>
+
+                                <option value="male" class="bg-white dark:bg-[#111115]
+                                    text-zinc-800 dark:text-zinc-200">
+
+                                    Male
+
+                                </option>
+
+                                <option value="female" class="bg-white dark:bg-[#111115]
+                                    text-zinc-800 dark:text-zinc-200">
+
+                                    Female
+
+                                </option>
+
+                                <option value="other" class="bg-white dark:bg-[#111115]
+                                    text-zinc-800 dark:text-zinc-200">
+
+                                    Other
+
+                                </option>
+
+                            </select>
+
+
+                            <span class="absolute right-0 top-0
+                                h-full flex items-center
+                                pr-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none z-10">
+
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+                        </div>
+
+
+                        @if (registerForm.get('gender')?.touched &&
+                        registerForm.get('gender')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Please select your gender.</p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Date Of Birth -->
+                    <!-- ============================================= -->
+
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2 z-10">
+
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+
+                                    <path stroke="currentColor" stroke-width="1.5"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <input formControlName="dateOfBirth" type="date"
+                                [class.!border-rose-500]="registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched"
+                                class="w-full
+                                pl-12 pr-4
+                                py-3.5
+                                border border-zinc-200
+                                dark:border-white/5
+                                rounded-xl
+                                focus:ring-0
+                                focus:!border-violet-500
+                                transition-all duration-200
+                                text-sm
+                                text-zinc-500
+                                dark:text-zinc-400
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                cursor-pointer
+                                hover:border-zinc-300
+                                dark:hover:border-white/10
+                                [color-scheme:light]
+                                dark:[color-scheme:dark]" />
+
+                        </div>
+
+
+                        @if (registerForm.get('dateOfBirth')?.touched &&
+                        registerForm.get('dateOfBirth')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Date of birth is required.</p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+
+
+                    <div class="relative flex flex-col">
+
+                        <!-- Password -->
+                        <div class="relative flex flex-col">
+
+                            <div class="relative flex items-center">
+
+                                <span class="absolute left-0 pl-4
+            text-zinc-400
+            dark:text-zinc-500
+            pointer-events-none
+            top-1/2
+            -translate-y-1/2
+            z-10">
+
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 1 1 0 000-2z"
+                                            clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+
+                                </span>
+
+                                <input #pass formControlName="password" type="password" id="password_floating_outlined"
+                                    placeholder=" "
+                                    [class.!border-rose-500]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                                    class="block px-4 pl-12
+            pb-2.5 pt-4
+            w-full text-sm
+            text-zinc-900
+            dark:text-zinc-100
+            bg-[#f8f8f9]
+            dark:bg-[#09090b]
+            rounded-xl
+            border border-zinc-200
+            dark:border-white/5
+            appearance-none
+            focus:outline-none
+            focus:ring-0
+            focus:!border-violet-500
+            peer
+            placeholder-transparent
+            transition-all duration-200
+            hover:border-zinc-300
+            dark:hover:border-white/10" />
+
+                                <label for="password_floating_outlined" class="absolute text-xs
+            text-zinc-500
+            dark:text-zinc-400
+            duration-300
+            transform
+            -translate-y-4
+            scale-75
+            top-2 z-10
+            origin-[0]
+            bg-[#f8f8f9]
+            dark:bg-[#09090b]
+            px-2
+            peer-focus:px-2
+            peer-focus:text-violet-400
+            peer-placeholder-shown:scale-100
+            peer-placeholder-shown:-translate-y-1/2
+            peer-placeholder-shown:top-1/2
+            peer-focus:top-2
+            peer-focus:scale-75
+            peer-focus:-translate-y-4
+            start-10
+            cursor-text
+            rounded">
+
+                                    Password
+
+                                </label>
+
+                                <!-- Eye -->
+                                <span (click)="showPassword(pass)" class="absolute top-1/2 end-4
+            -translate-y-1/2
+            cursor-pointer
+            text-zinc-400
+            dark:text-zinc-500
+            hover:text-violet-500
+            dark:hover:text-violet-400
+            transition-colors duration-200">
+
+                                    <i [class]="pass.type === 'password'
+                    ? 'fa-eye-slash'
+                    : 'fa-eye'" class="fas">
+                                    </i>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        @if (registerForm.get('password')?.touched &&
+                        registerForm.get('password')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Password is required.</p>
+
+                        </div>
+
+                        }
+
+
+                        @if (registerForm.get('password')?.touched &&
+                        registerForm.get('password')?.hasError('pattern')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>
+                                Must contain at least 8 chars, 1 uppercase,
+                                1 lowercase, 1 number, and 1 special
+                            </p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+
+
+                    <!-- Confirm Password -->
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <span class="absolute left-0 pl-4
+            text-zinc-400
+            dark:text-zinc-500
+            pointer-events-none
+            top-1/2
+            -translate-y-1/2
+            z-10">
+
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 1 1 0 000-2z"
+                                        clip-rule="evenodd">
+                                    </path>
+                                </svg>
+
+                            </span>
+
+                            <input #rePass formControlName="rePassword" type="password"
+                                id="confirm_password_floating_outlined" placeholder=" "
+                                [class.!border-rose-500]="registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched"
+                                class="block px-4 pl-12
+            pb-2.5 pt-4
+            w-full text-sm
+            text-zinc-900
+            dark:text-zinc-100
+            bg-[#f8f8f9]
+            dark:bg-[#09090b]
+            rounded-xl
+            border border-zinc-200
+            dark:border-white/5
+            appearance-none
+            focus:outline-none
+            focus:ring-0
+            focus:!border-violet-500
+            peer
+            placeholder-transparent
+            transition-all duration-200
+            hover:border-zinc-300
+            dark:hover:border-white/10" />
+
+                            <label for="confirm_password_floating_outlined" class="absolute text-xs
+            text-zinc-500
+            dark:text-zinc-400
+            duration-300
+            transform
+            -translate-y-4
+            scale-75
+            top-2 z-10
+            origin-[0]
+            bg-[#f8f8f9]
+            dark:bg-[#09090b]
+            px-2
+            peer-focus:px-2
+            peer-focus:text-violet-400
+            peer-placeholder-shown:scale-100
+            peer-placeholder-shown:-translate-y-1/2
+            peer-placeholder-shown:top-1/2
+            peer-focus:top-2
+            peer-focus:scale-75
+            peer-focus:-translate-y-4
+            start-10
+            cursor-text
+            rounded">
+
+                                Confirm Password
+
+                            </label>
+
+                            <!-- Eye -->
+                            <span (click)="showPassword(rePass)" class="absolute top-1/2 end-4
+            -translate-y-1/2
+            cursor-pointer
+            text-zinc-400
+            dark:text-zinc-500
+            hover:text-violet-500
+            dark:hover:text-violet-400
+            transition-colors duration-200">
+
+                                <i [class]="rePass.type === 'password'
+                    ? 'fa-eye-slash'
+                    : 'fa-eye'" class="fas">
+                                </i>
+
+                            </span>
+
+                        </div>
+
+                        @if (registerForm.get('rePassword')?.touched &&
+                        registerForm.get('rePassword')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+                            <p>Please confirm your password.</p>
+                        </div>
+
+                        }
+
+                        @if (registerForm.get('rePassword')?.touched &&
+                        registerForm.get('rePassword')?.hasError('passwordMismatch')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+                            <p>Passwords do not match.</p>
+                        </div>
+
+                        }
+
+                    </div>
+
+
+                    <!-- ============================================= -->
+                    <!-- Form Error -->
+                    <!-- ============================================= -->
+
+                    @if (registerForm.touched &&
+                    registerForm.hasError('invalidEmailOrUsername')) {
+
+                    <div class="mt-1.5 text-xs
+                        text-rose-400
+                        bg-rose-500/5
+                        dark:bg-rose-500/10
+                        border border-rose-500/15
+                        dark:border-rose-500/20
+                        rounded-xl p-3">
+
+                        <p>
+                            Please enter a valid email or username.
+                        </p>
+
+                    </div>
+
+                    }
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Submit Button -->
+                    <!-- ============================================= -->
+
+                    <button type="submit" class="w-full
+                        bg-gradient-to-r
+                        from-violet-600
+                        via-indigo-600
+                        to-violet-600
+                        hover:from-violet-500
+                        hover:via-indigo-500
+                        hover:to-pink-500
+                        disabled:from-zinc-800
+                        disabled:to-zinc-800
+                        disabled:text-zinc-500
+                        disabled:border
+                        disabled:border-white/5
+                        disabled:shadow-none
+                        disabled:cursor-not-allowed
+                        cursor-pointer
+                        text-white
+                        py-3.5 px-6
+                        rounded-xl
+                        font-bold text-sm
+                        transition-all duration-300
+                        shadow-md
+                        shadow-violet-600/10
+                        mt-6
+                        active:scale-[0.98]
+                        flex items-center
+                        justify-center gap-2">
+
+                        <span>
+                            Create New Account
+                        </span>
+
+                        @if (loding) {
+
+                        <i class="fas fa-spinner animate-spin"></i>
+
+                        }
+
+                    </button>
+
+
+
+                    <!-- ============================================= -->
+                    <!-- API Error Banner -->
+                    <!-- ============================================= -->
+
+                    @if (msgError) {
+
+                    <p class="text-center
+                        text-rose-400
+                        text-xs
+                        rounded-xl
+                        font-medium">
+
+                        {{msgError}}
+
+                    </p>
+
+                    }
+
+
+
+                    <!-- ============================================= -->
+                    <!-- Login Button -->
+                    <!-- ============================================= -->
+
+                    <button type="button" routerLink="/login" class="w-full
+                        bg-zinc-100
+                        hover:bg-zinc-200
+                        dark:bg-[#18181d]
+                        dark:hover:bg-white/10
+                        border border-zinc-200
+                        dark:border-white/5
+                        hover:border-violet-500/30
+                        cursor-pointer
+                        text-zinc-700
+                        dark:text-zinc-300
+                        hover:text-zinc-900
+                        dark:hover:text-white
+                        py-3.5 px-6
+                        rounded-xl
+                        font-bold text-sm
+                        transition-all duration-300
+                        mt-3
+                        active:scale-[0.98]
+                        flex items-center
+                        justify-center gap-2">
+
+                        <span>
+                            I already have an account
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

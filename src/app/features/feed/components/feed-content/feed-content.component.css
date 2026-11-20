@@ -1,0 +1,14 @@
+.story-progress {
+    width: 0%;
+    animation: storyProgress 5s linear forwards;
+}
+
+@keyframes storyProgress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}

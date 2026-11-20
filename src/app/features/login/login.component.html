@@ -1,0 +1,653 @@
+<div class="min-h-screen flex items-center justify-center
+    bg-[#f5f5f7] text-zinc-900
+    dark:bg-[#070709] dark:text-zinc-100
+    p-3 sm:p-5 font-sans transition-colors duration-300">
+
+    <!-- Main Container -->
+    <div class="relative w-full max-w-7xl mx-auto overflow-hidden
+        rounded-[2.5rem]
+        border border-zinc-200/80
+        bg-[#fafafa]
+        dark:border-white/5
+        dark:bg-[#0d0d10]
+        shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+        dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+        grid grid-cols-1 lg:grid-cols-2
+        gap-6 lg:gap-10
+        p-4 md:p-6 lg:p-8
+        transition-colors duration-300">
+
+        <!-- Soft Background Glow -->
+        <div class="absolute -top-32 -left-32
+            w-72 h-72
+            bg-violet-500/5
+            dark:bg-violet-600/10
+            rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="absolute -bottom-32 -right-32
+            w-72 h-72
+            bg-pink-500/5
+            dark:bg-pink-500/10
+            rounded-full blur-3xl pointer-events-none">
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- LEFT SIDE -->
+        <!-- ================================================= -->
+
+        <div class="hidden lg:flex flex-col justify-center
+            py-4 pr-4 relative z-10">
+
+            <!-- Logo -->
+            <header class="mb-8">
+
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11
+                        bg-gradient-to-tr
+                        from-violet-600 via-indigo-500 to-pink-500
+                        rounded-2xl
+                        flex items-center justify-center
+                        shadow-md shadow-indigo-500/10
+                        group-hover:scale-105
+                        transition-all duration-300">
+
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+                        </svg>
+
+                    </div>
+
+                    <span class="font-bold text-2xl
+                        tracking-tight
+                        text-zinc-900
+                        dark:text-white">
+
+                        Nexus
+
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- Welcome Text -->
+            <div class="max-w-xl mx-auto">
+
+                <div class="inline-flex items-center gap-2
+                    px-3 py-1.5
+                    rounded-full
+                    bg-violet-500/8
+                    dark:bg-violet-500/10
+                    border border-violet-500/15
+                    dark:border-violet-500/20
+                    text-violet-600
+                    dark:text-violet-400
+                    text-xs font-semibold mb-5">
+
+                    <span class="w-1.5 h-1.5 rounded-full
+                        bg-violet-500
+                        dark:bg-violet-400">
+                    </span>
+
+                    Welcome back
+
+                </div>
+
+
+                <h1 class="text-4xl xl:text-5xl
+                    font-extrabold
+                    tracking-tight
+                    leading-tight
+                    text-zinc-900
+                    dark:text-zinc-100
+                    mb-5">
+
+                    Welcome Back
+                    <br>
+
+                    <span class="bg-gradient-to-r
+                        from-violet-500 via-indigo-500 to-pink-500
+                        dark:from-violet-400 dark:via-indigo-400 dark:to-pink-400
+                        bg-clip-text text-transparent">
+
+                        to Nexus
+
+                    </span>
+
+                </h1>
+
+
+                <p class="text-zinc-500
+                    dark:text-zinc-500
+                    text-sm leading-7 max-w-md">
+
+                    Sign in to continue your journey and stay connected
+                    with everything happening inside Nexus.
+
+                </p>
+
+            </div>
+
+
+            <!-- Illustration -->
+            <div class="relative flex justify-center
+                items-center mt-8">
+
+                <div class="absolute w-44 h-44
+                    rounded-full
+                    bg-violet-500/5
+                    dark:bg-violet-600/10
+                    blur-3xl">
+                </div>
+
+                <img src="/iamges/logo-2.png" alt="Nexus 3D illustration" class="relative w-auto
+                    h-[180px] xl:h-[210px]
+                    object-contain
+                    drop-shadow-[0_10px_25px_rgba(124,58,237,0.12)]">
+
+            </div>
+
+
+            <!-- Small Footer Text -->
+            <p class="text-center text-xs
+                text-zinc-400
+                dark:text-zinc-600
+                mt-5">
+
+                Secure access • Modern experience • Nexus
+
+            </p>
+        </div>
+
+
+
+        <!-- ================================================= -->
+        <!-- RIGHT SIDE -->
+        <!-- ================================================= -->
+
+        <div class="flex flex-col justify-center
+            w-full max-w-lg mx-auto
+            lg:max-w-none
+            py-3 lg:py-1
+            lg:pl-4
+            relative z-10">
+
+            <!-- Login Card -->
+            <div class="w-full max-w-lg mx-auto
+                rounded-[1.75rem]
+                border border-zinc-200/80
+                bg-white
+                dark:border-white/5
+                dark:bg-[#111115]
+                shadow-[0_4px_20px_rgba(0,0,0,0.025)]
+                dark:shadow-[0_4px_20px_rgba(0,0,0,0.18)]
+                p-6 md:p-7 lg:p-8
+                transition-colors duration-300">
+
+
+                <!-- Header -->
+                <div class="mb-7">
+
+                    <div class="w-10 h-10
+                        rounded-xl
+                        bg-violet-500/8
+                        dark:bg-violet-500/10
+                        border border-violet-500/15
+                        dark:border-violet-500/20
+                        flex items-center justify-center
+                        mb-4">
+
+                        <svg class="w-5 h-5
+                            text-violet-500
+                            dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4m-5-4l5-5-5-5m5 5H3">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+
+                    <h2 class="text-2xl lg:text-[27px]
+                        font-extrabold
+                        tracking-tight
+                        text-zinc-900
+                        dark:text-white
+                        mb-1">
+
+                        Login to your account
+
+                    </h2>
+
+
+                    <p class="text-zinc-500 text-sm">
+
+                        Welcome back! Please enter your details.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- ============================= -->
+                <!-- FORM -->
+                <!-- ============================= -->
+
+                <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="space-y-5">
+
+
+                    <!-- EMAIL -->
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <!-- Icon -->
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2
+                                z-10">
+
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                        d="M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2zm0 0l8 6 8-6">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <!-- Input -->
+                            <input formControlName="email" type="email" id="email_floating_outlined" placeholder=" "
+                                [class.!border-rose-500]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                                class="block px-4 pl-12
+                                pb-2.5 pt-4
+                                w-full text-sm
+                                text-zinc-900
+                                dark:text-zinc-100
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                rounded-xl
+                                border border-zinc-200
+                                dark:border-white/5
+                                appearance-none
+                                focus:outline-none
+                                focus:ring-0
+                                focus:!border-violet-500
+                                peer
+                                placeholder-transparent
+                                transition-all duration-200
+                                hover:border-zinc-300
+                                dark:hover:border-white/10" />
+
+
+                            <!-- Label -->
+                            <label for="email_floating_outlined" class="absolute text-xs
+                                text-zinc-500
+                                duration-300
+                                transform
+                                -translate-y-4
+                                scale-75
+                                top-2
+                                z-10
+                                origin-[0]
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                px-2
+                                peer-focus:px-2
+                                peer-focus:text-violet-400
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:-translate-y-1/2
+                                peer-placeholder-shown:top-1/2
+                                peer-focus:top-2
+                                peer-focus:scale-75
+                                peer-focus:-translate-y-4
+                                start-10
+                                cursor-text
+                                rounded">
+
+                                Email address
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Errors -->
+
+                        @if (loginForm.get('email')?.touched &&
+                        loginForm.get('email')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Email is required.</p>
+
+                        </div>
+
+                        }
+
+
+                        @if (loginForm.get('email')?.touched &&
+                        loginForm.get('email')?.hasError('email')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Please enter a valid email address.</p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+                    <div class="relative flex flex-col">
+
+                        <div class="relative flex items-center">
+
+                            <!-- Icon -->
+                            <span class="absolute left-0 pl-4
+                                text-zinc-400
+                                dark:text-zinc-500
+                                pointer-events-none
+                                top-1/2
+                                -translate-y-1/2
+                                z-10">
+
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+
+                                    <path fill-rule="evenodd"
+                                        d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 1 1 0 000-2z"
+                                        clip-rule="evenodd">
+                                    </path>
+
+                                </svg>
+
+                            </span>
+
+
+                            <!-- Input -->
+                            <input #pass formControlName="password" type="password" id="password_floating_outlined"
+                                placeholder=" "
+                                [class.!border-rose-500]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                                class="block px-4 pl-12
+                                pb-2.5 pt-4
+                                w-full text-sm
+                                text-zinc-900
+                                dark:text-zinc-100
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                rounded-xl
+                                border border-zinc-200
+                                dark:border-white/5
+                                appearance-none
+                                focus:outline-none
+                                focus:ring-0
+                                focus:!border-violet-500
+                                peer
+                                placeholder-transparent
+                                transition-all duration-200
+                                hover:border-zinc-300
+                                dark:hover:border-white/10" />
+
+
+                            <!-- Label -->
+                            <label for="password_floating_outlined" class="absolute text-xs
+                                text-zinc-500
+                                duration-300
+                                transform
+                                -translate-y-4
+                                scale-75
+                                top-2
+                                z-10
+                                origin-[0]
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                px-2
+                                peer-focus:px-2
+                                peer-focus:text-violet-400
+                                peer-placeholder-shown:scale-100
+                                peer-placeholder-shown:-translate-y-1/2
+                                peer-placeholder-shown:top-1/2
+                                peer-focus:top-2
+                                peer-focus:scale-75
+                                peer-focus:-translate-y-4
+                                start-10
+                                cursor-text
+                                rounded">
+
+                                Password
+
+                            </label>
+                            <!-- Eye -->
+                            <span (click)="showPassword(pass)" class="absolute top-1/2 end-4
+            -translate-y-1/2
+            cursor-pointer
+            text-zinc-400
+            dark:text-zinc-500
+            hover:text-violet-500
+            dark:hover:text-violet-400
+            transition-colors duration-200">
+
+                                <i [class]="pass.type === 'password'
+                    ? 'fa-eye-slash'
+                    : 'fa-eye'" class="fas">
+                                </i>
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- Errors -->
+
+                        @if (loginForm.get('password')?.touched &&
+                        loginForm.get('password')?.hasError('required')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>Password is required.</p>
+
+                        </div>
+
+                        }
+
+
+                        @if (loginForm.get('password')?.touched &&
+                        loginForm.get('password')?.hasError('pattern')) {
+
+                        <div class="mt-1.5 text-xs text-rose-400">
+
+                            <p>
+                                Must contain at least 8 chars, 1 uppercase,
+                                1 lowercase, 1 number, and 1 special
+                            </p>
+
+                        </div>
+
+                        }
+
+                    </div>
+
+
+
+                    <!-- REMEMBER + FORGOT -->
+
+                    <div class="flex items-center
+                        justify-between pt-1">
+
+                        <div class="flex items-center">
+
+                            <input id="remember-me" name="rememberMe" type="checkbox" class="h-4 w-4
+                                appearance-none
+                                rounded-md
+                                border border-zinc-200
+                                dark:border-white/10
+                                bg-[#f8f8f9]
+                                dark:bg-[#09090b]
+                                checked:bg-violet-600
+                                checked:border-violet-600
+                                focus:ring-2
+                                focus:ring-violet-500/20
+                                cursor-pointer
+                                transition-all">
+
+                            <label for="remember-me" class="ml-2 text-sm
+                                text-zinc-500
+                                cursor-pointer
+                                hover:text-zinc-700
+                                dark:hover:text-zinc-300
+                                transition-colors">
+
+                                Remember me
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="text-sm">
+
+                            <a href="#" class="font-medium
+                                text-violet-500
+                                dark:text-violet-400
+                                hover:text-violet-400
+                                dark:hover:text-violet-300
+                                transition-colors">
+
+                                Forgot password?
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button type="submit" class="w-full
+                        bg-gradient-to-r
+                        from-violet-600
+                        via-indigo-600
+                        to-violet-600
+                        hover:from-violet-500
+                        hover:via-indigo-500
+                        hover:to-pink-500
+                        disabled:from-zinc-800
+                        disabled:to-zinc-800
+                        disabled:text-zinc-500
+                        disabled:border
+                        disabled:border-white/5
+                        disabled:shadow-none
+                        disabled:cursor-not-allowed
+                        cursor-pointer
+                        text-white
+                        py-3.5 px-6
+                        rounded-xl
+                        font-bold text-sm
+                        transition-all duration-300
+                        shadow-md
+                        shadow-violet-600/10
+                        active:scale-[0.98]
+                        flex items-center
+                        justify-center gap-2">
+
+                        <span>
+                            Login
+                        </span>
+
+
+                        @if (loding) {
+
+                        <i class="fas fa-spinner animate-spin"></i>
+
+                        }
+
+                    </button>
+
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="relative flex items-center py-1">
+
+                        <div class="flex-1 border-t
+                            border-zinc-200
+                            dark:border-white/5">
+                        </div>
+
+                        <span class="px-3 text-[11px]
+                            uppercase tracking-wider
+                            text-zinc-400
+                            dark:text-zinc-600">
+
+                            or
+
+                        </span>
+
+                        <div class="flex-1 border-t
+                            border-zinc-200
+                            dark:border-white/5">
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- CREATE ACCOUNT -->
+
+                    <button type="button" routerLink="/register" class="w-full
+                        bg-zinc-100
+                        hover:bg-zinc-200
+                        dark:bg-[#18181d]
+                        dark:hover:bg-white/10
+                        border border-zinc-200
+                        dark:border-white/5
+                        hover:border-violet-500/30
+                        text-zinc-700
+                        dark:text-zinc-300
+                        hover:text-zinc-900
+                        dark:hover:text-white
+                        py-3.5 px-6
+                        rounded-xl
+                        font-bold text-sm
+                        transition-all duration-300
+                        cursor-pointer
+                        active:scale-[0.98]
+                        flex items-center
+                        justify-center gap-2">
+
+                        <span>
+                            Create New Account
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

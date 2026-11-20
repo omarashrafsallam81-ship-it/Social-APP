@@ -1,0 +1,788 @@
+<div class="min-h-screen bg-white text-zinc-900
+    dark:bg-[#070709] dark:text-zinc-100
+    font-sans selection:bg-violet-600 selection:text-white
+    pb-12 transition-colors duration-300">
+
+    <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- =====================================================
+             QUICK NAVIGATION
+        ====================================================== -->
+
+        <div class="flex items-center gap-2 mb-5 flex-wrap">
+
+            <!-- Feed -->
+            <a routerLink="/feed" class="flex items-center gap-2 px-4 py-2.5 rounded-xl
+                bg-white dark:bg-[#111115]
+                border border-zinc-200 dark:border-white/5
+                text-zinc-700 dark:text-zinc-300
+                hover:bg-violet-600 hover:text-white
+                hover:border-violet-600
+                transition-all duration-300">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+
+                </svg>
+
+                <span class="text-sm font-semibold">
+                    Feed
+                </span>
+            </a>
+
+
+            <!-- Notifications -->
+            <a routerLink="/notification" class="flex items-center gap-2 px-4 py-2.5 rounded-xl
+                bg-white dark:bg-[#111115]
+                border border-zinc-200 dark:border-white/5
+                text-zinc-700 dark:text-zinc-300
+                hover:bg-violet-600 hover:text-white
+                hover:border-violet-600
+                transition-all duration-300">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+
+                </svg>
+
+                <span class="text-sm font-semibold">
+                    Notifications
+                </span>
+            </a>
+
+
+            <!-- Settings -->
+            <a routerLink="/setting" class="flex items-center gap-2 px-4 py-2.5 rounded-xl
+                bg-white dark:bg-[#111115]
+                border border-zinc-200 dark:border-white/5
+                text-zinc-700 dark:text-zinc-300
+                hover:bg-violet-600 hover:text-white
+                hover:border-violet-600
+                transition-all duration-300">
+
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" />
+
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19.4 15a1.7 1.7 0 00.34 1.88l.06.06-1.7 1.7-.06-.06a1.7 1.7 0 00-1.88-.34 1.7 1.7 0 00-1.03 1.56v.08h-2.4v-.08a1.7 1.7 0 00-1.03-1.56 1.7 1.7 0 00-1.88.34l-.06.06-1.7-1.7.06-.06A1.7 1.7 0 008.4 15a1.7 1.7 0 00-1.56-1.03h-.08v-2.4h.08A1.7 1.7 0 008.4 10.5a1.7 1.7 0 00-.34-1.88L8 8.56l1.7-1.7.06.06a1.7 1.7 0 001.88.34A1.7 1.7 0 0012.67 5.7v-.08h2.4v.08a1.7 1.7 0 001.03 1.56 1.7 1.7 0 001.88-.34l.06-.06 1.7 1.7-.06.06A1.7 1.7 0 0019.4 10.5a1.7 1.7 0 001.56 1.03h.08v2.4h-.08A1.7 1.7 0 0019.4 15z" />
+
+                </svg>
+
+                <span class="text-sm font-semibold">
+                    Settings
+                </span>
+            </a>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROFILE CARD
+        ====================================================== -->
+
+        <div class="bg-white dark:bg-[#111115]
+            border border-zinc-200 dark:border-white/5
+            rounded-3xl overflow-hidden
+            shadow-xl dark:shadow-xl
+            transition-colors duration-300">
+
+
+            <!-- =================================================
+                 COVER
+            ================================================== -->
+
+            <div class="h-44 sm:h-52 md:h-56
+                relative overflow-hidden
+                bg-gradient-to-r from-violet-600 via-indigo-600 to-pink-500">
+
+
+
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/10"></div>
+
+
+                <!-- Decorative Glow -->
+                @if (!coverPhoto) {
+
+                <div class="absolute -top-20 -right-16
+                        w-64 h-64
+                        bg-white/10
+                        rounded-full blur-3xl">
+                </div>
+
+                <div class="absolute -bottom-24 -left-10
+                        w-72 h-72
+                        bg-violet-400/10
+                        rounded-full blur-3xl">
+                </div>
+
+                }
+
+
+                <!-- Cover File Input -->
+                <input #coverInput type="file" accept="image/*" class="hidden" (change)="uploadCoverPhoto($event)">
+
+
+                <!-- Edit Cover Button -->
+                <button type="button" (click)="coverInput.click()" class="absolute top-4 right-4 sm:top-5 sm:right-5
+                    px-4 py-2
+                    rounded-xl
+                    bg-black/30
+                    backdrop-blur-md
+                    border border-white/10
+                    text-xs font-bold
+                    text-white
+                    hover:bg-black/50
+                    hover:border-white/20
+                    transition-all duration-300">
+
+                    <span class="flex items-center gap-2">
+
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15.232 5.232l3.536 3.536M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3z" />
+
+                        </svg>
+
+                        Edit Cover
+
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =====================================================
+                 PROFILE INFO
+            ====================================================== -->
+
+            <div class="px-5 sm:px-7 md:px-8 pb-7">
+
+
+                <!-- Avatar + User Info + Edit Profile -->
+
+                <div class="flex flex-col md:flex-row
+                    md:items-end md:justify-between
+                    gap-5
+                    -mt-14
+                    relative">
+
+
+                    <!-- Avatar + Name -->
+
+                    <div class="flex items-end gap-4 sm:gap-5 min-w-0">
+
+
+                        <!-- Avatar -->
+
+                        <div class="relative shrink-0">
+
+                            <img [src]="profilePhoto" class="w-24 h-24 sm:w-28 sm:h-28
+                                rounded-full
+                                object-cover
+                                border-4
+                                border-white dark:border-[#111115]
+                                shadow-xl" [alt]="profileData?.name || 'Profile'">
+
+
+                            <!-- Online Indicator -->
+
+                            <span class="absolute bottom-1 right-1
+                                w-4 h-4 rounded-full
+                                bg-emerald-500
+                                border-[3px]
+                                border-white dark:border-[#111115]">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Name -->
+
+                        <div class="pb-1 sm:pb-2 min-w-0">
+
+                            <div class="flex items-center gap-2 flex-wrap">
+
+                                <h1 class="text-xl sm:text-2xl
+                                    font-black
+                                    text-zinc-900 dark:text-white
+                                    tracking-tight">
+
+                                    {{ profileData?.name || 'Loading...' }}
+
+                                </h1>
+
+
+                                <!-- PRO -->
+
+                                <span class="bg-violet-500/10
+                                    text-violet-600 dark:text-violet-400
+                                    text-[10px] sm:text-xs
+                                    px-2 py-1
+                                    rounded-md
+                                    border border-violet-500/20
+                                    font-bold">
+
+                                    PRO
+
+                                </span>
+
+                            </div>
+
+
+                            <!-- Username -->
+
+                            <p class="text-xs sm:text-sm
+                                text-zinc-500
+                                dark:text-zinc-500
+                                mt-0.5">
+
+                                {{ profileData?.username || '@username' }}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         EDIT PROFILE
+                    ================================================== -->
+
+                    <!-- Hidden Profile Input -->
+
+                    <input #profileInput type="file" accept="image/*" class="hidden"
+                        (change)="uploadProfilePhoto($event)">
+
+
+                    <!-- Edit Profile Button -->
+
+                    <button type="button" (click)="profileInput.click()" class="w-full md:w-auto
+                        px-5 py-2.5
+                        rounded-xl
+                        bg-violet-600
+                        hover:bg-violet-500
+                        text-white
+                        text-sm font-bold
+                        shadow-md
+                        shadow-violet-600/20
+                        transition-all duration-300">
+
+                        <span class="flex items-center justify-center gap-2">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15.232 5.232l3.536 3.536M4 20h4l10.5-10.5a2.121 2.121 0 00-3-3L5 17v3z" />
+
+                            </svg>
+
+                            Edit Profile
+
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     BIO
+                ================================================== -->
+
+                <div class="mt-6 max-w-2xl">
+
+                    <p class="text-sm
+                        text-zinc-700 dark:text-zinc-200
+                        leading-7">
+
+                        Senior Frontend Developer building modern web
+                        applications with Angular and creating clean,
+                        fast and user-friendly digital experiences.
+
+                    </p>
+
+
+                    <!-- META INFORMATION -->
+
+                    <div class="flex flex-wrap items-center
+                        gap-x-5 gap-y-3
+                        mt-4
+                        text-xs
+                        text-zinc-500 dark:text-zinc-400">
+
+
+                        <!-- Location -->
+
+                        <span class="flex items-center gap-2">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+
+                            </svg>
+
+                            Cairo, Egypt
+
+                        </span>
+
+
+                        <!-- Joined -->
+
+                        <span class="flex items-center gap-2">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+
+                            </svg>
+
+                            Joined March 2025
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     STATS
+                ================================================== -->
+
+                <div class="grid grid-cols-3
+                    max-w-xl
+                    mt-7
+                    bg-zinc-100 dark:bg-white/5
+                    border border-zinc-200 dark:border-white/5
+                    rounded-2xl
+                    overflow-hidden
+                    transition-colors duration-300">
+
+
+                    <!-- Followers -->
+
+                    <div class="text-center
+                        py-4
+                        hover:bg-zinc-200/60
+                        dark:hover:bg-white/[0.04]
+                        transition-colors">
+
+                        <span class="block text-lg
+                            font-black
+                            text-zinc-900 dark:text-white">
+
+                            {{ profileData?.followers?.length ?? 0 }}
+
+                        </span>
+
+                        <span class="text-[10px] sm:text-[11px]
+                            text-zinc-500
+                            uppercase
+                            tracking-wide
+                            font-medium">
+
+                            Followers
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- Following -->
+
+                    <div class="text-center
+                        py-4
+                        border-x
+                        border-zinc-200 dark:border-white/5
+                        hover:bg-zinc-200/60
+                        dark:hover:bg-white/[0.04]
+                        transition-colors">
+
+                        <span class="block text-lg
+                            font-black
+                            text-zinc-900 dark:text-white">
+
+                            {{ profileData?.following?.length ?? 0 }}
+
+                        </span>
+
+                        <span class="text-[10px] sm:text-[11px]
+                            text-zinc-500
+                            uppercase
+                            tracking-wide
+                            font-medium">
+
+                            Following
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- Posts -->
+
+                    <div class="text-center
+                        py-4
+                        hover:bg-zinc-200/60
+                        dark:hover:bg-white/[0.04]
+                        transition-colors">
+
+                        <span class="block text-lg
+                            font-black
+                            text-violet-600 dark:text-violet-400">
+
+                            0
+
+                        </span>
+
+                        <span class="text-[10px] sm:text-[11px]
+                            text-zinc-500
+                            uppercase
+                            tracking-wide
+                            font-medium">
+
+                            Posts
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             TABS
+        ====================================================== -->
+
+        <div class="flex items-center gap-1.5 sm:gap-2
+            mt-6
+            border-b
+            border-zinc-200 dark:border-white/5
+            pb-2
+            overflow-x-auto scrollbar-none">
+
+
+            <!-- Posts -->
+
+            <button type="button" class="shrink-0
+                px-4 sm:px-5
+                py-2.5
+                rounded-xl
+                bg-violet-600
+                text-white
+                text-xs sm:text-sm
+                font-bold
+                shadow-md
+                shadow-violet-600/10">
+
+                Posts
+
+            </button>
+
+
+            <!-- Replies -->
+
+            <button type="button" class="shrink-0
+                px-4 sm:px-5
+                py-2.5
+                rounded-xl
+                text-zinc-500
+                dark:text-zinc-400
+                hover:text-zinc-900
+                dark:hover:text-white
+                hover:bg-zinc-100
+                dark:hover:bg-white/5
+                text-xs sm:text-sm
+                font-medium
+                transition-all">
+
+                Replies
+
+            </button>
+
+
+            <!-- Media -->
+
+            <button type="button" class="shrink-0
+                px-4 sm:px-5
+                py-2.5
+                rounded-xl
+                text-zinc-500
+                dark:text-zinc-400
+                hover:text-zinc-900
+                dark:hover:text-white
+                hover:bg-zinc-100
+                dark:hover:bg-white/5
+                text-xs sm:text-sm
+                font-medium
+                transition-all">
+
+                Media
+
+            </button>
+
+
+            <!-- Likes -->
+
+            <button type="button" class="shrink-0
+                px-4 sm:px-5
+                py-2.5
+                rounded-xl
+                text-zinc-500
+                dark:text-zinc-400
+                hover:text-zinc-900
+                dark:hover:text-white
+                hover:bg-zinc-100
+                dark:hover:bg-white/5
+                text-xs sm:text-sm
+                font-medium
+                transition-all">
+
+                Likes
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             POSTS
+        ====================================================== -->
+
+        <div class="grid md:grid-cols-2 gap-4 sm:gap-5 mt-6">
+
+
+            <!-- POST 1 -->
+
+            <article class="bg-white dark:bg-[#111115]
+                border border-zinc-200 dark:border-white/5
+                rounded-3xl
+                p-5
+                shadow-lg dark:shadow-xl
+                hover:border-zinc-300 dark:hover:border-white/10
+                transition-all duration-300">
+
+
+                <!-- Header -->
+
+                <div class="flex justify-between items-center mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <img [src]="profilePhoto" class="w-10 h-10 rounded-full object-cover"
+                            [alt]="profileData?.name || 'Profile'">
+
+                        <div>
+
+                            <h3 class="text-sm
+                                font-bold
+                                text-zinc-900 dark:text-white">
+
+                                {{ profileData?.name || 'Loading...' }}
+
+                            </h3>
+
+                            <p class="text-xs text-zinc-500">
+
+                                {{ profileData?.username || '@username' }} · 2h ago
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Menu -->
+
+                    <button type="button" class="p-2 rounded-xl
+                        text-zinc-400
+                        hover:text-zinc-800
+                        dark:hover:text-white
+                        hover:bg-zinc-100
+                        dark:hover:bg-white/5
+                        transition">
+
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+
+                            <circle cx="5" cy="12" r="1.5" />
+                            <circle cx="12" cy="12" r="1.5" />
+                            <circle cx="19" cy="12" r="1.5" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Content -->
+
+                <p class="text-sm
+                    text-zinc-700 dark:text-zinc-200
+                    leading-7">
+
+                    Just finished designing a new dashboard concept.
+                    Keeping things simple and focused. ✨
+
+                </p>
+
+
+                <!-- Stats -->
+
+                <div class="flex items-center gap-5
+                    mt-5
+                    pt-4
+                    border-t
+                    border-zinc-200 dark:border-white/5
+                    text-xs
+                    text-zinc-500 dark:text-zinc-400">
+
+                    <span class="text-pink-500">
+                        ♥ 342
+                    </span>
+
+                    <span>
+                        48 comments
+                    </span>
+
+                    <span class="ml-auto">
+                        2h
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- POST 2 -->
+
+            <article class="bg-white dark:bg-[#111115]
+                border border-zinc-200 dark:border-white/5
+                rounded-3xl
+                p-5
+                shadow-lg dark:shadow-xl
+                hover:border-zinc-300 dark:hover:border-white/10
+                transition-all duration-300">
+
+
+                <!-- Header -->
+
+                <div class="flex justify-between items-center mb-4">
+
+                    <div class="flex items-center gap-3">
+
+                        <img [src]="profilePhoto" class="w-10 h-10 rounded-full object-cover"
+                            [alt]="profileData?.name || 'Profile'">
+
+                        <div>
+
+                            <h3 class="text-sm
+                                font-bold
+                                text-zinc-900 dark:text-white">
+
+                                {{ profileData?.name || 'Loading...' }}
+
+                            </h3>
+
+                            <p class="text-xs text-zinc-500">
+
+                                {{ profileData?.username || '@username' }} · 5h ago
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Menu -->
+
+                    <button type="button" class="p-2 rounded-xl
+                        text-zinc-400
+                        hover:text-zinc-800
+                        dark:hover:text-white
+                        hover:bg-zinc-100
+                        dark:hover:bg-white/5
+                        transition">
+
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+
+                            <circle cx="5" cy="12" r="1.5" />
+                            <circle cx="12" cy="12" r="1.5" />
+                            <circle cx="19" cy="12" r="1.5" />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Content -->
+
+                <p class="text-sm
+                    text-zinc-700 dark:text-zinc-200
+                    leading-7">
+
+                    Building something exciting with Angular and Tailwind CSS.
+                    More details coming soon. 🚀
+
+                </p>
+
+
+                <!-- Stats -->
+
+                <div class="flex items-center gap-5
+                    mt-5
+                    pt-4
+                    border-t
+                    border-zinc-200 dark:border-white/5
+                    text-xs
+                    text-zinc-500 dark:text-zinc-400">
+
+                    <span class="text-pink-500">
+                        ♥ 214
+                    </span>
+
+                    <span>
+                        31 comments
+                    </span>
+
+                    <span class="ml-auto">
+                        5h
+                    </span>
+
+                </div>
+
+
+
+            </article>
+            <div class="flex items-center gap-5">
+                <img [src]="profilePhoto">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
